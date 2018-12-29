@@ -1,4 +1,4 @@
-package com.annuaire.stage;
+package com.annuaire.stage.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -32,12 +32,22 @@ public class Annuaire implements Serializable {
     )
     private Long id;
     
+    @ApiModelProperty(notes = "Provided user name", required =true)
+    @NotBlank
     private String nom;
     
+    @ApiModelProperty(notes = "Provided user prenom", required =true)
+    @NotBlank
     private String prenom;
     
+    @ApiModelProperty(notes = "Provided user departement", required =true)
+    @NotBlank
     private String departement;
 
+    @ApiModelProperty(notes = "Provided user phone", required =true)
+    @NotBlank
+    private String phone;
+    
 	public Long getId() {
 		return id;
 	}
@@ -68,6 +78,14 @@ public class Annuaire implements Serializable {
 
 	public void setDepartement(String departement) {
 		this.departement = departement;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
     
     
